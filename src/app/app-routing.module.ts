@@ -16,60 +16,61 @@ import { UserResidentsComponent } from './user/user-residents/user-residents.com
 import { ErrorPageComponent } from './error-page/error-page.component';
 
 const routes: Routes = [
-  { path: '/', component: LoginComponent },
-  { path: '**', component: ErrorPageComponent },
+  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
 
   {
-    path: '/admin/dashboard',
+    path: 'admin/dashboard',
     component: AdminDashboardComponent,
     canActivate: [LoginGuard],
   },
   {
-    path: '/admin/residents',
+    path: 'admin/residents',
     component: AdminResidentsComponent,
     canActivate: [LoginGuard],
   },
   {
-    path: '/admin/aparts',
+    path: 'admin/aparts',
     component: AdminApartsComponent,
     canActivate: [LoginGuard],
   },
   {
-    path: '/admin/parcels',
+    path: 'admin/parcels',
     component: AdminParcelsComponent,
     canActivate: [LoginGuard],
   },
   {
-    path: '/admin/visitors',
+    path: 'admin/visitors',
     component: AdminVisitorsComponent,
     canActivate: [LoginGuard],
   },
 
   {
-    path: '/user/dashboard',
+    path: 'user/dashboard',
     component: UserDashboardComponent,
     canActivate: [LoginGuard],
   },
   {
-    path: '/user/residents',
+    path: 'user/residents',
     component: UserResidentsComponent,
     canActivate: [LoginGuard],
   },
   {
-    path: '/user/aparts',
+    path: 'user/aparts',
     component: UserApartsComponent,
     canActivate: [LoginGuard],
   },
   {
-    path: '/user/parcels',
+    path: 'user/parcels',
     component: UserParcelsComponent,
     canActivate: [LoginGuard],
   },
   {
-    path: '/user/visitors',
+    path: 'user/visitors',
     component: UserVisitorsComponent,
     canActivate: [LoginGuard],
   },
+  { path: '**', component: ErrorPageComponent },
 ];
 
 @NgModule({
