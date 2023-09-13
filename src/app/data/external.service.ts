@@ -9,7 +9,7 @@ export class ExternalService {
   atemptLogin(username: string, password: string): boolean {
     let response: boolean = false;
 
-    fetch('')
+    fetch('http://localhost:8080/login')
       .then((data) => data.json())
       .then((r) => {
         console.log('response: ' + r);
