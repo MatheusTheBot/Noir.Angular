@@ -1,1 +1,18 @@
-<p>login works!</p>
+<div class="screen">
+
+    <label class="app-title">Noir</label>
+
+    <div class="login">
+        <label class="title">Log in</label>
+
+        <br>
+        <label>Email</label>
+        <input [(ngModel)]="username" type="text" placeholder="Email">
+
+        <br>
+        <label>Password</label>
+        <input [(ngModel)]="password" type="password" placeholder="Password">
+        <br>
+        <a (click)="handleLogin()">Login</a>
+    </div>
+</div>
