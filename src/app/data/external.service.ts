@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 export class ExternalService {
   constructor() {}
 
-  atemptLogin(username: string, password: string): boolean {
-    let response: boolean = false;
+  atemptLogin(username: string, password: string): string {
+    let response: string = '';
 
     fetch('http://localhost:8080/login')
       .then((data) => data.json())
@@ -16,6 +16,6 @@ export class ExternalService {
         response = r;
       });
 
-    return true;
+    return response;
   }
 }
