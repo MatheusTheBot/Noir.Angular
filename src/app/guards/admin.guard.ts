@@ -11,7 +11,7 @@ export class AdminGuard {
   canActivate() {
     const isAuthorized = this.auth.logInStatus();
 
-    if (isAuthorized) {
+    if (isAuthorized == 'Admin') {
       return true;
     } else {
       alert('User not authorized');

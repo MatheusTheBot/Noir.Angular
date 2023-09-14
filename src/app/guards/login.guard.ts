@@ -11,12 +11,12 @@ export class LoginGuard {
   canActivate() {
     const isAuthorized = this.auth.logInStatus();
 
-    if (isAuthorized) {
-      return true;
-    } else {
+    if (isAuthorized == null) {
       alert('User not authorized');
       this.router.navigate(['/', 'login']);
       return false;
+    } else {
+      return true;
     }
   }
 }
