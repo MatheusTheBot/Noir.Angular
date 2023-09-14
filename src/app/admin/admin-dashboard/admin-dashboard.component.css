@@ -1,0 +1,12 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    align-self: self-start;
+
+    height: max-content;
+    width: 100%;
+
+    background-color: aquamarine;
+}
