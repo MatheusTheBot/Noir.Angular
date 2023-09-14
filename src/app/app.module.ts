@@ -22,6 +22,8 @@ import { UserParcelsComponent } from './user/user-parcels/user-parcels.component
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 import { UserResidentsComponent } from './user/user-residents/user-residents.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { RedirectPageComponent } from './redirect-page/redirect-page.component';
+import { AdminStaffComponent } from './admin/admin-staff/admin-staff.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     UserDashboardComponent,
     UserResidentsComponent,
     ErrorPageComponent,
+    RedirectPageComponent,
+    AdminStaffComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [EncriptService, AuthService],
