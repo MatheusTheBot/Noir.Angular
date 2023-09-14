@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-const { createHash } = require('crypto');
+const { sha256 } = require('crypto-js/sha256');
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +8,6 @@ export class EncriptService {
   constructor() {}
 
   public hash(password: string): string {
-    return createHash('sha256').update(password).digest('hex');
+    return sha256(password).toString();
   }
 }
