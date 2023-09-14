@@ -16,7 +16,7 @@ import { UserResidentsComponent } from './user/user-residents/user-residents.com
 import { ErrorPageComponent } from './error-page/error-page.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
 
   {
