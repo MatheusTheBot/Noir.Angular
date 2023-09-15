@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { log } from 'console';
 
 @Component({
   selector: 'app-redirect-page',
@@ -9,15 +8,23 @@ import { log } from 'console';
   styleUrls: ['./redirect-page.component.css'],
 })
 export class RedirectPageComponent implements OnInit {
-  constructor(private router: Router, private auth: AuthService) {}
+  constructor(
+    private router: Router,
+    private auth: AuthService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     const loginStatus = this.auth.logInStatus();
 
     if (loginStatus === 'User') {
-      this.router.navigate(['/', 'user/dashboard']);
+      this.router.navigate(['user', 'dashboard'], {
+        relativeTo: this.route,
+      });
     } else if (loginStatus === 'Admin') {
-      this.router.navigate(['/', 'admin/dashboard']);
+      this.router.navigate(['admin', 'dashboard'], {
+        relativeTo: this.route,
+      });
     } else {
       this.router.navigate(['/', 'login']);
     }
