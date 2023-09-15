@@ -6,8 +6,6 @@ import { ExternalService } from '../data/external.service';
   providedIn: 'root',
 })
 export class AuthService {
-  private auth: string = '';
-
   constructor(
     private cript: EncriptService,
     private external: ExternalService
@@ -16,13 +14,20 @@ export class AuthService {
   logIn(username: string, password: string) {
     const hashedpassword = this.cript.hash(password);
 
-    const isAuthorised = this.external.atemptLogin(username, hashedpassword);
-
-    if (isAuthorised) {
-      localStorage.setItem('login', this.auth);
-    } else {
-      localStorage.clear();
-    }
+    const isAuthorised = this.external
+      .atemptLogin(username, hashedpassword)
+      .subscribe(
+        (response) => {
+          if (response != '') {
+            localStorage.setItem('login', response);
+          } else {
+            localStorage.clear();
+          }
+        },
+        (error) => {
+          console.error('Error: ' + error);
+        }
+      );
   }
 
   logOut() {
