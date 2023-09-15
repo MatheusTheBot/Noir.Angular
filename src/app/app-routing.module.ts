@@ -27,56 +27,69 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
   {
-    path: 'admin/dashboard',
-    component: AdminDashboardComponent,
+    path: 'admin',
     canActivate: [AdminGuard],
-  },
-  {
-    path: 'admin/residents',
-    component: AdminResidentsComponent,
-    canActivate: [AdminGuard],
-  },
-  {
-    path: 'admin/aparts',
-    component: AdminApartsComponent,
-    canActivate: [AdminGuard],
-  },
-  {
-    path: 'admin/parcels',
-    component: AdminParcelsComponent,
-    canActivate: [AdminGuard],
-  },
-  {
-    path: 'admin/visitors',
-    component: AdminVisitorsComponent,
-    canActivate: [AdminGuard],
+    children: [
+      {
+        path: 'dashboard',
+        component: AdminDashboardComponent,
+        canActivate: [AdminGuard],
+      },
+      {
+        path: 'residents',
+        component: AdminResidentsComponent,
+        canActivate: [AdminGuard],
+      },
+      {
+        path: 'aparts',
+        component: AdminApartsComponent,
+        canActivate: [AdminGuard],
+      },
+      {
+        path: 'parcels',
+        component: AdminParcelsComponent,
+        canActivate: [AdminGuard],
+      },
+      {
+        path: 'visitors',
+        component: AdminVisitorsComponent,
+        canActivate: [AdminGuard],
+      },
+    ],
   },
 
   {
-    path: 'user/dashboard',
-    component: UserDashboardComponent,
-    canActivate: [LoginGuard, AdminGuard],
+    path: 'user',
+    canActivate: [LoginGuard],
+    children: [
+      {
+        path: 'dashboard',
+        component: UserDashboardComponent,
+        canActivate: [LoginGuard, AdminGuard],
+      },
+      {
+        path: 'residents',
+        component: UserResidentsComponent,
+        canActivate: [LoginGuard, AdminGuard],
+      },
+      {
+        path: 'aparts',
+        component: UserApartsComponent,
+        canActivate: [LoginGuard, AdminGuard],
+      },
+      {
+        path: 'parcels',
+        component: UserParcelsComponent,
+        canActivate: [LoginGuard, AdminGuard],
+      },
+      {
+        path: 'visitors',
+        component: UserVisitorsComponent,
+        canActivate: [LoginGuard, AdminGuard],
+      },
+    ],
   },
-  {
-    path: 'user/residents',
-    component: UserResidentsComponent,
-    canActivate: [LoginGuard, AdminGuard],
-  },
-  {
-    path: 'user/aparts',
-    component: UserApartsComponent,
-    canActivate: [LoginGuard, AdminGuard],
-  },
-  {
-    path: 'user/parcels',
-    component: UserParcelsComponent,
-    canActivate: [LoginGuard, AdminGuard],
-  },
-  {
-    path: 'user/visitors',
-    component: UserVisitorsComponent,
-    canActivate: [LoginGuard, AdminGuard],
-  },
+  { path: 'redirect', component: RedirectPageComponent },
   { path: '**', component: ErrorPageComponent },
 ];
 
