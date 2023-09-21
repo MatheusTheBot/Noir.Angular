@@ -1,0 +1,43 @@
+/* card.component.css */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    background-color: #E7E7E7;
+    color: #2c2c2c;
+    border-radius: 15px;
+  }
+  
+  hr {
+    width: 100%;
+    border: 0.5px solid #2c2c2c;
+    margin: 10px 0;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  td, th {
+    padding: 8px;
+    text-align: left;
+    transition: background-color 0.1s, color 0.1s;
+  }
+  
+  th {
+    font-weight: bold;
+  }
+  
+  tbody td:hover {
+    background-color: grey;
+    color: white;
+    border-radius: 8px;
+  }
+  
+  .card label {
+    font-size: larger;
+  }
+  
