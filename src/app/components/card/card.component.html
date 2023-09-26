@@ -1,0 +1,23 @@
+<div class="card">
+    <label>{{title}}</label>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th *ngFor="let header of headers">{{header}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let single of data">
+                <ng-container *ngFor="let header of headers">
+                  <td *ngIf="single[header] instanceof Date == false; else formatDateTemplate">
+                    {{ single[header]}}
+                  </td>
+                  <ng-template #formatDateTemplate>
+                    {{ dateFormat(single[header]) }}
+                  </ng-template>
+                </ng-container>
+              </tr>
+          </tbody>
+    </table>
+</div>

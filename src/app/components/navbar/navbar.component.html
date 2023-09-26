@@ -1,0 +1,5 @@
+<div class="navbar">
+    <ul *ngFor="let link of links">
+        <a (click)="handleClick(link.url)">{{link.header}}</a>
+    </ul>
+</div>

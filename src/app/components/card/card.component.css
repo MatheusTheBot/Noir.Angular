@@ -1,0 +1,33 @@
+:root {
+    --cadet-gray: #9E9E9E;
+    --jet: #313131;
+    --platinum: #E7E7E7;
+    --dim-gray: #6D6D6D;
+    --jet-2: #2C2C2C;
+}
+
+.card {
+    border-radius: 10px;
+
+    color: #2C2C2C;
+    background-color: #E7E7E7;
+}
+
+hr {
+    border-color: #2C2C2C;
+}
+
+tbody tr :hover {
+    color: #E7E7E7;
+    background-color: #9E9E9E;
+}
+
+tbody tr {
+    padding: 5px;
+    margin: 5px;
+    transition: all 250ms;
+}
+
+a{
+    padding: 5px;
+}

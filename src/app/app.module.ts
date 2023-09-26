@@ -5,10 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { PagesModule } from './pages/pages.module';
 import { CoreModule } from './core/core.module';
-import { AdminModule } from './admin/admin.module';
-import { UserModule } from './user/user.module';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,9 +17,9 @@ import { UserModule } from './user/user.module';
     FormsModule,
     HttpClientModule,
 
+    PagesModule,
     CoreModule,
-    AdminModule,
-    UserModule,
+    ComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
