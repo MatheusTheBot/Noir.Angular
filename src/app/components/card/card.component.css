@@ -11,23 +11,41 @@
 
     color: #2C2C2C;
     background-color: #E7E7E7;
+
+    height: max-content;
+    width: max-content;
+    padding: 10px;
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
 }
 
 hr {
     border-color: #2C2C2C;
+    background-color: #2C2C2C;
+
+    border-style: solid;
+
+    width: 80%;
+    height: 0.5;
 }
 
 tbody tr :hover {
     color: #E7E7E7;
     background-color: #9E9E9E;
+    border-radius: 5px;
 }
 
 tbody tr {
-    padding: 5px;
-    margin: 5px;
+    padding: 10px;
+    margin: 8px;
     transition: all 250ms;
 }
 
 a{
-    padding: 5px;
+    padding: 10px;
 }

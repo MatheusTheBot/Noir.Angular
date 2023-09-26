@@ -5,6 +5,7 @@ import { Parcel } from 'src/app/core/models/Parcel.models';
 import { Resident } from 'src/app/core/models/Resident.models';
 import { Staff } from 'src/app/core/models/Staff.models';
 import { Visitant } from 'src/app/core/models/Visitant.models';
+import { formatDate } from 'src/app/core/utils/formatDate.utils';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -40,38 +41,40 @@ export class AdminDashboardComponent {
     'Arrived Date',
   ];
 
+  ommits: string[] = ['from', 'id'];
+
   cards: Parcel[] | Resident[] | Visitant[] | Staff[] = [
     {
       id: 12,
-      type: ParcelType.Medium,
+      type: ParcelType.Medium.toString(),
       description: 'Test description1',
       from: 'test from1',
       for: 'test for1',
-      arrivedDate: new Date(),
+      arrivedDate: formatDate(new Date()),
     },
     {
       id: 12,
-      type: ParcelType.Medium,
+      type: ParcelType.Medium.toString(),
       description: 'Test description2',
       from: 'test from2',
       for: 'test for2',
-      arrivedDate: new Date(),
+      arrivedDate: formatDate(new Date()),
     },
     {
       id: 12,
-      type: ParcelType.Medium,
+      type: ParcelType.Medium.toString(),
       description: 'Test description3',
       from: 'test from3',
       for: 'test for3',
-      arrivedDate: new Date(),
+      arrivedDate: formatDate(new Date()),
     },
     {
       id: 12,
-      type: ParcelType.Medium,
+      type: ParcelType.Medium.toString(),
       description: 'Test description4',
       from: 'test from4',
       for: 'test for4',
-      arrivedDate: new Date(),
+      arrivedDate: formatDate(new Date()),
     },
   ];
 

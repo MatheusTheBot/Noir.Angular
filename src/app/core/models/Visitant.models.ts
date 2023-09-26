@@ -1,9 +1,9 @@
 export interface Visitant {
   id: number;
   fullName: string;
-  birthDate: Date;
+  birthDate: string;
   document: string;
   canEnter: boolean;
 
-  [key: string]: string | number | Date | boolean;
+  [key: string]: string | number | boolean;
 }

@@ -1,8 +1,8 @@
 export interface Resident {
   id: number;
   fullName: string;
-  birthDate: Date;
+  birthDate: string;
   document: string;
 
-  [key: string]: string | number | Date;
+  [key: string]: string | number;
 }

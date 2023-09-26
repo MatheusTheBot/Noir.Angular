@@ -1,12 +1,10 @@
-import { ParcelType } from '../enums/parcelType.enums';
-
 export interface Parcel {
   id: number;
-  type: ParcelType;
+  type: string;
   description: string;
   from: string;
   for: string;
-  arrivedDate: Date;
+  arrivedDate: string;
 
-  [key: string]: string | number | ParcelType | Date;
+  [key: string]: string | number;
 }
